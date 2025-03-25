@@ -1,16 +1,15 @@
 import express from "express";
 import { join } from "node:path";
-// import { config } from "dotenv";  // TODO: bu eski uslub
-// config()
 
-// const {PORT}  = process.env
 const PORT = process.env.PORT;
 
 const app = express();
 
+//middleware
 app.use(express.json());
 app.use(express.urlencoded({ extends: true }));
 
+//engine
 app.set("view engine", "ejs");
 app.set("views", join(import.meta.dirname, "views"));
 
